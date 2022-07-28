@@ -1,13 +1,33 @@
 /*Styles*/
+:root{
+    --primary: blue;
+    --secundary: #0097a7
+}
+
 html{
     font-size: 62.5%;
 }
 
 body{
     font-size: 16px; /*1rem = 10px*/
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
 }
 
-.titulo{
+.container{
+    width: 120rem;
+}
+
+.title{
     text-align: center;
     font-size: 3rem;
+    font-weight: bolder;
+}
+
+.main-nav{
+    margin: 0 auto 0 auto;
+}
+
+.main-nav_bg{
+    background-color: var(--secundary);
 }
