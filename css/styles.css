@@ -5,7 +5,12 @@
 
 html{
     font-size: 62.5%;
+    box-sizing: border-box;
 }
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
 
 body{
     font-size: 16px; /*1rem = 10px*/
@@ -14,7 +19,8 @@ body{
 }
 
 .container{
-    width: 120rem;
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
 .title{
@@ -24,19 +30,27 @@ body{
 }
 
 .main-nav{ /*Navegador principal*/
-    margin: 0 auto;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+}
 
+@media (min-width: 768px) {
+    .main-nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }
 
 .main-nav a{ /*Enlaces del navegador principal*/
+    display: block;
+    text-align: center;
     padding: 1rem;
     color: white;
     font-size: 1.8rem;
     text-decoration: none;
     font-weight: bold;
 }
+
 
 .main-nav a:hover{ /*Enlaces del navegador principal cuando el mouse está encima*/
     background-color: white;
@@ -48,4 +62,13 @@ body{
 
 .main-nav_bg{
     background-color: var(--secundary);
+}
+
+.main-title{
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45rem;
+    padding: 2rem;
+    text-align: center;
 }
