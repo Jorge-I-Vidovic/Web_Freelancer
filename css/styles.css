@@ -4,10 +4,11 @@
 }
 
 
-/*  Parte general del proyecto  */
+/*  Configuración general del proyecto  */
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+    scroll-snap-type: y mandatory;
 }
 
 *, *:before, *:after {
@@ -50,7 +51,7 @@ p{
     border-radius: 2rem;
 }
 
-/*          -- Partes especificas de la main page--         */
+/*          -- Configuraciones especificas del proyecto  */
 
 .container{
     max-width: 120rem;
@@ -63,7 +64,7 @@ p{
     font-weight: bolder;
 }
 
-/*   Inicio - Navegador principal: */
+/*Navegador principal*/
 .main-nav{ 
     display: flex;
     flex-direction: column;
@@ -98,8 +99,7 @@ p{
     background-color: var(--secundary);
 }
 
-/*  Final - Navegador principal*/
-
+/*Seccion del titulo principal*/
 .main-title{
     background-image: url(../img/background.jpg);
     background-repeat: no-repeat;
@@ -126,6 +126,7 @@ p{
     color: white;
     margin-top: 1rem;
     padding: 1rem 3rem;
+    border: none;
     border-radius: 0.5rem;
     width: 90%;
 
@@ -142,10 +143,105 @@ p{
     }
 }
 
+.button:hover{
+    cursor: pointer;
+}
+
+.button_send .button{
+    width: 100%;
+    align-items: center;
+}
 /*Servicios*/
+
+.services,.main-nav,.form{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
 @media (min-width: 768px) {
     .services{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
     }
+}
+
+.service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service h3{
+    font-size: 2.2rem;
+    font-weight: normal;
+    color: var(--secundary);
+}
+
+.service p{
+    line-height: 1.5;
+    text-align: center;
+}
+
+.service .icons{
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    background-color: var(--secundary);
+    display: flex; /*Diseño estilo mediante cajas*/
+    justify-content: center; /*Justifica el elemento horizontalmente*/
+    align-items: center; /*Justifica el elemento verticalmente*/
+}
+
+/*Formulario de contacto*/
+.form{
+    background-color: whitesmoke;
+    width: min(80%, 100%); /*Utiliza el valor minimo por defecto*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+
+}
+
+.form fieldset{
+    border: none;
+}
+
+.form legend{
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: var(--secundary);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form_fields{
+    width: 100%;
+}
+
+.field{
+    margin-bottom: 1rem;
+}
+
+.field textarea{
+    height: 20rem;
+}
+
+.field label{
+    color: var(--secundary);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.form_input{
+    height: 4rem;
+    width: 100%;
+    padding-left: 1rem;
+    border: none;
+    border-radius: .5rem;
+}
+
+/*Footer*/
+.footer p{
+    text-align: center;
 }
